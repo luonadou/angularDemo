@@ -1,0 +1,173 @@
+#material .holder{
+		background: #f7f7f7;
+		border:1px #ddd dashed;
+		margin:15px 0 20px 0;
+		padding:5px 0px;
+		line-height: 23px;
+	}
+#material .content1{display: inline-block; width: 40px}
+#material .content2{display: inline-block;}
+#material .thead-holder{
+	background:#f7f7f7 none repeat scroll 0 0;
+	border:1px #ddd solid;
+}
+#material .thead-holder td {height: 30px;padding:0 15px;}
+#material .tip-lamp{
+	background: url(/resources/images/tip-lamp.gif); 
+	display: block;
+	width: 17px;
+	height: 17px;
+	position: relative;
+	top: -43px;
+	left: 22px;
+}
+#material .img-view{
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	padding: 1px;
+	border: 1px solid #ddd;
+	background: #f7f7f7;
+	vertical-align: middle;
+}
+#material .tip{
+	color: red;
+	width: 300px;
+	padding-left: 50px;
+	display: inline-block;
+}
+#bankCard .cardList,#bankCard .table-form,#bankCard .bank-list{
+	display: none;
+}
+#bankCard .show{
+	display: block;
+}
+#bankCard .bank-list{
+	position: absolute;
+	width: 380px;
+	top: 51px;
+	left: 166px;
+	border: 1px solid #ddd;
+	background: #f7f7f7;
+	z-index: 999;
+}
+#bankCard .bank-list li{
+	border-bottom: 1px solid #ddd;
+	line-height: 30px;
+	color: #333;
+	padding-left: 15px;
+}
+#bankCard .bank-list li:last-child{
+	border-bottom: none;
+}
+#bankCard .bank-list li:hover{
+	background: #fff;
+}
+#bankCard .cardList li.addCard {
+	border: 1px dashed #ccc;
+	line-height: 156px;
+	text-align: center;
+}
+#bankCard .cardList li {
+	width: 278px;
+	height: 158px;
+	border: 1px solid #e6e6e6;
+	background-color: #f5f5f5;
+	margin: 0 19px 19px 0;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+#bankCard .cardList li.addCard a {
+	display: block;
+	font-size: 16px;
+	color: #333;
+}
+#bankCard .iconfont{
+	background: url('/resources/images/add.gif') no-repeat center center;
+	  width: 18px;
+	  height: 18px;
+	  display: inline-block;
+	  vertical-align: middle;
+	  margin-right: 10px;
+	  margin-top: -2px;
+}
+#bankCard select{
+	padding: 6px 8px;
+	margin-right: 10px;
+	border: 1px solid #ddd;
+}
+#bankCard .form-group{
+	font-size: 15px;
+	color: #333;
+}
+#bankCard .form-group{
+	position: relative;
+	height: 70px;
+	border: 1px solid #ddd;
+	border-bottom: none;
+}
+#bankCard .form-group.last{
+	border-bottom: 1px solid #ddd;
+}
+#bankCard .form-group .has-error{
+	position: absolute;
+	left: 460px;
+	top: 19px;
+	display: inline-block;
+	height: 32px;
+	line-height: 32px;
+	color: red;
+}
+#bankCard .form-group .name{
+	display: inline-block;
+	padding: 0 15px;	
+	width: 120px;
+	height: 70px;
+	border-right: 1px solid #ddd;
+	line-height: 70px;
+}
+#bankCard .form-group .value{
+	padding: 19px 15px;
+	display: inline-block;
+}
+#bankCard form .button-blue{
+	margin: 15px 0 15px 166px;
+}
+
+#bankCard .cardList li{position: relative;  width:278px; height:158px; border:1px solid #e6e6e6; background-color:#f5f5f5; margin:0 19px 19px 0; -moz-border-radius:5px; -webkit-border-radius: 5px; border-radius: 5px; }
+#bankCard .card_name{
+	position: absolute;
+	right: 20px;
+	top:20px;
+}
+#bankCard .card_name img{
+    float: left;
+}
+#bankCard .card_name span{
+	float: left;
+	display: inline-block;
+	height: 18px;
+	background: url("/themes/theme_default/image/cash/card_namebg2.jpg");
+	padding: 0 3px;
+	color: #fff;
+	font-size: 12px;
+	line-height: 18px;
+}
+#bankCard .cardList li.addCard{ border:1px dashed #ccc; line-height:156px; text-align:center; }
+#bankCard .cardList li.addCard a{ display:block; font-size:16px; }
+#bankCard .cardList li.addCard a i{ font-size:30px; margin-right:10px; vertical-align:middle; }
+#bankCard .cardList li.addCard a:hover{ background-color:#eee; color:#333; text-decoration:none; }
+#bankCard .cardList li dl{ padding-left:20px; background:url(/themes/theme_default/image/cash/cardBg.jpg) no-repeat; }
+#bankCard .cardList li dl dt{ font-size:20px; color:#cdcdcd; line-height:55px; font-weight:bold; }
+#bankCard .cardList li dl dt span{ display:inline-block; font-size:18px; color:#c83e41; vertical-align:middle; padding-right:8px; }
+#bankCard .cardList li dl dd{ line-height:25px; }
+#bankCard .cardList li dl dd img{ vertical-align:middle; margin-right:5px; display: none; }
+#bankCard .cardList .unbind{ margin-top:10px; display:block; line-height:40px; border-top:1px solid #ccc; text-align:center; background-color:#eee; overflow: hidden; padding: 0 10px;}
+#bankCard .cardList .unbind a{ display:block; height:40px; }
+#bankCard .cardList .unbind a:link,.cardList .unbind a:visited{ color:#999; }
+#bankCard .cardList .unbind a:hover{ color:#c83e41; }
+#bankCard .cardList em{
+	  font-style: normal;
+	  float: right;
+}

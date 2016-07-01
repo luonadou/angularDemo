@@ -1,0 +1,83 @@
+<div ng-controller="accountSetCtrl" class="accountSet">
+	<h2>账户设置</h2>
+	<div class="part-cont">
+	    <div class="portrait">
+	    </div>
+	    <div class="wrapper">
+    		<span>你的账户安全度</span>
+    		<span style="color:red">低</span>
+	    	<span id="progress"></span> 
+	    </div>	
+	</div>
+	<div style="border-top:1px #ddd solid"></div>
+	<div class="part-cont">
+        <div class="contentSet">
+			<div class="contenta">
+				<span id="locked"></span>
+				<span>登录密码</span><br>
+				<span style="font-size:12px;color:#999">登陆时需要输入的密码</span>
+			</div>
+			<div class="contentb">
+				<span class="accountSet-status"></span>
+				<span >已设置</span>
+			</div>
+			<div class="contentc">
+				<a class="modifyBtn" ng-class="{open:showPsw}" ng-click="showPsw=!showPsw" >修改</a>
+			</div>
+        </div>
+    </div>
+    <div class="accountSet-content" ng-show="showPsw">
+        <div class="accountSet-center">
+        	<form name="form" novalidate ng-submit="submit()">
+	        	<div class="layer2">
+	        		<label class="accountSet-label">原密码</label>
+	        		<input type="password"   class="accountSet-input" name="password"/>
+	        		<label class="accountSet-label1">请输入原密码</label>
+	        	</div>
+	        	<div class="layer2">
+	        		<label class="accountSet-label">新密码</label>
+	        		<input type="password"  class="accountSet-input" name="new-password"/>
+	        		<label class="accountSet-label1">输入新的登录，不少于8位，至少包含一个字母和一个数字</label>
+	        	</div>
+	        	<div class="layer2">
+	        		<label class="accountSet-label">确认新密码</label>
+	        		<input type="password"  class="accountSet-input" name="new-password"/>
+	        		<label class="accountSet-label1">再次输入新密码</label>
+	        	</div>
+	        	<input type="submit" class="accountSet-btn accountSet-btnPosi" value="确认修改" >
+	        </form>
+        </div>
+    </div>
+	<div class="part-cont">
+        <div class="contentSet">
+			<div class="contenta">
+				<span id="email"></span>
+				<span>绑定邮箱</span><br>
+				<span style="font-size:12px;color:#999">找回密码，接受最新消息</span>
+			</div>
+			<div class="contentb">
+				<span class="accountSet-status"></span>
+				<span >已绑定</span>
+			</div>
+			<div class="contentc">
+				<a class="modifyBtn" ng-class="{open:showEma}" ng-click="showEma=!showEma">修改</a>
+			</div>
+        </div>
+    </div>
+    <div class="accountSet-content" style="height:217px;" ng-show="showEma">
+    	<form name="form" novalidate ng-submit="submit()"> 
+	    	<div class="accountSet-center">
+	    		<div class="layer3">
+	    			<label class="accountSet-label">已验证邮箱</label>
+	    			<label class="accountSet-label2">{{email}}</label>
+	    		</div>
+	    		<div class="layer3">
+	    			<label class="accountSet-label">验证码</label>
+	    			<input type="text" class="accountSet-input" />
+	    			<input id="getcode" class="accountSet-btn accountSet-btnPosi1" ng-click="getcode()" value="发送验证邮件" />
+	    		</div>
+	    		<input type="submit" class="accountSet-btn accountSet-btnPosi" value="下一步"/>
+	    	</div>
+	    </form>
+    </div>
+</div>

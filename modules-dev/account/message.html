@@ -1,0 +1,55 @@
+<script type="text/ng-template" id="templateId">
+    <h1>Template heading</h1>
+    <p>Content goes here</p>
+</script>
+<div ng-controller="messageCtrl">
+	<h2>我的消息</h2>
+	<div>
+		<div class="top-operate-bar clearfix">
+			
+			<div class="floatleft left-part">
+				<label><input type="checkbox" ng-click="checkedAll(!bAll)" ng-model="bAll" />选择所有</label>	
+			</div>
+			<div class="floatright right-part">
+				<a ng-click="deleteRow()">删除信息</a>|
+				<a ng-click="signRow(1)">标记已读</a>|
+				<a ng-click="signRow(2)">标记未读</a>
+			</div>
+		</div>
+		<ul class="message-list" ng-repeat="item in data">
+			<li>
+				<div class="title">
+					<input type="checkbox" ng-model="item.checked" />
+					<span>{{item.title}}</span>
+					<span class="status" ng-show="item.status == 1"><i class="read"></i>已读</span>
+					<span class="status" ng-show="item.status == 2"><i class="unread"></i>未读</span>
+				</div>
+				<div class="intro">
+					<span class="intro-content">{{item.content}}</span>
+					<a class="message-switch" ng-show="item.expand" ng-click="expandRow(item,'false')"><i class="message-shrink"></i></a>
+					<a class="message-switch" ng-hide="item.expand" ng-click="expandRow(item,'true')"><i class="message-expand"></i></a>					
+				</div>
+				<div class="content" ng-show="item.expand">
+					{{item.content}}
+				<div>
+			</li>
+		</ul>
+		<div id="page">	
+			<div paging
+				class="small"
+				page="page" 
+				page-size="pageSize" 
+				total="total"
+				adjacent="2"
+				dots="..."
+				scroll-top="false" 
+				hide-if-empty="true"
+				ul-class="pagination"
+				active-class="active"
+				disabled-class="disabled"
+				show-prev-next="true"
+				paging-action="getRows(page)">
+			</div>	
+		</div>
+	</div>
+</div>

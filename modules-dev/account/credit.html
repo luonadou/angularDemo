@@ -1,0 +1,61 @@
+<div ng-controller="creditCtrl" class="credit">
+	<h2>信用额度</h2>
+	<form id="form" novalidate name="myform" role="form" ng-submit="submit()">
+		<div class="apply">
+			<label>申请人：</label>
+			<span ng-bind='user.user' ng-model="user.user"></span>
+			<input type="hidden" name="username" value="{{user.user}}">
+		</div>
+		<div class="apply">
+			<label>申请金额：</label>
+			<input type="text"  ng-model="user.applyamount" required  ng-pattern="/^[0-9]*$/" placeholder="每次最多可以申请10000元" name="applyamount">
+		</div>
+		<div class="apply">
+			<label class="mt10">申请说明：</label>
+			<textarea  ng-model="user.applytext" required  name="applytext" cols="50" rows="10" resize="no"></textarea>
+		</div>
+		<div class="apply">
+			<label></label>
+			<button type="submit" class="surebtn">确认提交</button>
+		</div>
+	</form>
+	
+	<div class="apply_record">
+		<h3>申请记录</h3>
+		<table class="table-noline">
+			<thead>
+				<tr><td>时间</td><td>申请信用额度（元）</td><td>现有额度（元）</td><td>审核状态</td><td>备注</td></tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in data">
+					<td ng-bind="item.time"></td>
+					<td ng-bind="item.apply"></td>
+					<td ng-bind="item.applyuse"></td>
+					<td>
+						<span ng-if="item.status==0">不通过</span>
+						<span ng-if="item.status==1">通过</span>
+					</td>
+					<td ng-bind="item.remark"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div id="page">
+		<div paging
+		class="small"
+		page="page" 
+		page-size="3" 
+		total="total"
+		adjacent="2"
+		dots="..."
+		scroll-top="false" 
+		hide-if-empty="true"
+		ul-class="pagination"
+		active-class="active"
+		disabled-class="disabled"
+		show-prev-next="true"
+		paging-action="pageSerch(2)">
+		</div>
+	</div>
+</div>

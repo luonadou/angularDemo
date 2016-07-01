@@ -1,0 +1,79 @@
+<div ng-controller="discountCtrl" class="discount">
+	<h2>我的优惠</h2>
+	<div class="apply_record">
+		<h3 class="tl">我的红包</h3>
+		<table class="table-noline">
+			<thead>
+				<tr><td>红包名称</td><td>金额（元）</td><td>领取时间</td><td>过期时间</td><td>状态</td></tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in packageData">
+					<td ng-bind="item.time"></td>
+					<td ng-bind="item.apply"></td>
+					<td ng-bind="item.applyuse"></td>
+					<td ng-bind="item.remark"></td>
+					<td>
+						<span ng-if="item.status==0">不通过</span>
+						<span ng-if="item.status==1">通过</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div id="page">
+		<div paging
+		class="small"
+		page="packagePage" 
+		page-size="packagePageSize" 
+		total="packageTotal"
+		adjacent="2"
+		dots="..."
+		scroll-top="false" 
+		hide-if-empty="true"
+		ul-class="pagination"
+		active-class="active"
+		disabled-class="disabled"
+		show-prev-next="true"
+		paging-action="packagePageSearch(packagePage)">
+		</div>
+	</div>
+		
+	<div class="apply_record">
+		<h3>我的加息券</h3>
+		<table class="table-noline">
+			<thead>
+				<tr><td>加息券名称</td><td>加息比例</td><td>领取时间</td><td>过期时间</td><td>状态</td></tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in couponData">
+					<td ng-bind="item.time"></td>
+					<td ng-bind="item.apply"></td>
+					<td ng-bind="item.applyuse"></td>
+					<td ng-bind="item.apply"></td>
+					<td>
+						<span ng-if="item.status==0">不通过</span>
+						<span ng-if="item.status==1">通过</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>	
+	</div>
+	<div id="page">
+		<div paging
+		class="small"
+		page="couponPage" 
+		page-size="couponPageSize" 
+		total="couponTotal"
+		adjacent="2"
+		dots="..."
+		scroll-top="false" 
+		hide-if-empty="true"
+		ul-class="pagination"
+		active-class="active"
+		disabled-class="disabled"
+		show-prev-next="true"
+		paging-action="couponPageSearch(couponPage)">
+		</div>
+	</div>
+	
+</div>

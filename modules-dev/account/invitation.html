@@ -1,0 +1,45 @@
+<div ng-controller="invitationCtrl">
+	<h2>好友邀请</h2>
+	<div class="apply_record">
+		<div class="invitation">
+			<span class="f14 dark">邀请链接</span>
+			<input id="fe_text" class="ml15" ng-model="txt" type="text" name="lijie" size="30" value="">
+			<a id="d_clip_button" class="my_clip_button" data-clipboard-target="fe_text" href="javascript:;" class="button-blue tc" ng-click="copy();">复制</a>
+		</div>
+		<table class="table-noline">
+			<thead>
+				<tr><td>邀请人</td><td>被邀请人</td><td>邀请日期</td><td>红包是否派送</td></tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in data">
+					
+					<td ng-bind="item.apply"></td>
+					<td ng-bind="item.applyuse"></td>
+					<td ng-bind="item.time"></td>
+					<td>
+						<span ng-if="item.status==0">不通过</span>
+						<span ng-if="item.status==1">通过</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div id="page">
+		<div paging
+		class="small"
+		page="page" 
+		page-size="3" 
+		total="total"
+		adjacent="2"
+		dots="..."
+		scroll-top="false" 
+		hide-if-empty="true"
+		ul-class="pagination"
+		active-class="active"
+		disabled-class="disabled"
+		show-prev-next="true"
+		paging-action="pageSerch(2)">
+		</div>
+	</div>
+</div>

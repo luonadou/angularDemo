@@ -1,0 +1,60 @@
+<div ng-controller="bankCardCtrl" id='bankCard'>
+	<h2>银行卡</h2>
+	<div class="part-cont" >
+		<div class="table-form" ng-class="{show:formShow}">
+			<form  name="form" ng-submit="submit()" novalidate="novalidate" class="form-horizontal" role="form">
+				<div class="form-group">
+					<div class="input-group">
+						<span class="name">真实姓名:</span><div class="value"><input class="textbox" size="30" required ng-model="formData.name"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<span class="name">开户银行:</span><div class="value"><input ng-change="searchBank()" class="textbox" size="30" required ng-model="formData.bank"></div>
+					</div>
+					<ul ng-class="{show:bankListView}" class="bank-list">
+						<li ng-click="selectBank(this)" ng-repeat="item in bankList" ng-bind="item"></li>
+					</ul>
+				</div>				
+				<div class="form-group">
+					<div class="input-group">
+						<span class="name">所在位置:</span><div p2p-area class="value" json-url="/resources/interface/city" p2p-province="formData.province" p2p-city="formData.city"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<span class="name">支行名称:</span><div class="value"><input class="textbox" size="30" required ng-model="formData.subBranch"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<span class="name">银行账号:</span><div class="value">
+						<input class="textbox" size="30"  ng-model="formData.account"  format-num format-value="formData.account" required >
+					</div>
+					</div>
+				</div>				
+				<div class="form-group last">
+					<div class="input-group">
+						<span class="name">确认账号:</span><div class="value"><input  class="textbox" size="30" ng-model="formData.confirmAccount" confirm-insert="formData.account" compare-value="formData.confirmAccount" required></div>
+					</div>
+				</div>
+				<input class="button-blue" type="submit" value="确认提交">				
+			</form>
+		</div>
+		<ul class="cardList" ng-class="{show:cardShow}">
+			<li>
+				<dl>
+					<dt><span>银行卡</span>Bank</dt>
+					<dd><!-- <img alt="" src="/data/bank/mini/ICBC.png"> -->工商银行</dd>
+					<dd>6212***********9774</dd>
+				</dl>
+				<!-- <div class="card_name">					
+					<span>储蓄卡</span>
+				</div> -->
+				<span class="unbind"><a ng-click="" style="float:left">更换银行卡</a>
+				<em>已开通快捷支付</em>
+				</span>
+			</li>
+		</ul>		
+	</div>
+</div>

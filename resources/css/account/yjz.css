@@ -1,0 +1,785 @@
+
+.table-noline a{
+	color: #666;
+}
+
+
+/* COMMON */
+body{
+	word-break: break-all;
+}
+.floatleft{float:left !important; display:inline;}
+.floatright{float:right !important;display:inline;}
+
+.w110{
+	width: 110px !important;
+}
+.w200{
+	width: 200px !important;
+}
+
+.h36{
+	height: 36px !important;
+	line-height: 36px !important;
+}
+
+.h40{
+	height: 40px !important;
+	line-height: 40px !important;
+}
+
+.w-fill-textbox{
+	width: 96% !important;
+	padding-left: 2% !important;
+	padding-right: 2% !important;
+
+}
+
+.w-fill-button,.w-fill-select{
+	width: 100% !important;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+	text-align: center;
+}
+
+.w-fill-select{
+	width: 100% !important;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+	
+}
+
+
+
+.confirm-dialog{
+	top:40% !important;
+	width:300px;
+	margin-left: -150px;
+}
+
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+input[type=checkbox]{
+	vertical-align: -0.1em;
+	margin-right:10px;
+}
+
+em{
+	font-style: normal;
+}
+
+
+
+
+
+i.tip-lamp,i.read,i.unread,i.message-expand,i.message-shrink{
+	display:inline-block;
+	width: 18px;
+	height: 18px;
+	margin-right: 5px;
+	vertical-align: middle;
+	background: no-repeat center center;
+}
+i.tip-lamp{
+	background-image: url(../../images/tip-lamp.gif);
+}
+
+i.read{
+	background-image: url(../../images/message-status.gif);
+	background-position: 0px 0px;
+}
+i.unread{
+	background-image: url(../../images/message-status.gif);
+	background-position: 0px -18px;
+}
+
+i.message-expand{
+	height: 8px;
+	background-image: url(../../images/message-arrow.gif);
+	background-position: 0px 0px;
+}
+i.message-shrink{
+	height: 8px;
+	background-image: url(../../images/message-arrow.gif);
+	background-position: 0px -8px;
+}
+
+i.process{
+	display: inline-block;
+	height: 10px;
+	background: #6dc009;
+}
+
+
+
+.textbox{
+	height: 30px;
+	line-height: 30px;
+	padding: 0px 5px;
+	border: 1px solid #ddd;
+}
+
+.select{
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+	color: #989898;
+	border:1px solid #ddd;
+}
+
+.rd-select .display{
+	text-align:left;
+	padding:0px 30px 0px 7px;
+}
+.rd-select .trigger{
+	display: block;
+	position: absolute;
+	top:0px;
+	right: 0px;
+	width: 22px;
+	height: 100%;
+	background:url(../../images/rdSelect-trigger.gif) #f1f3f6 no-repeat center center;
+	outline: none;
+}
+.rd-select .trigger:active{
+	background-color: #e1e2e3;
+}
+.rd-select .content{
+	text-align: left;
+	border:1px solid #ddd;
+	background: #fff;
+	z-index: 99;
+}
+.rd-select .content .template-div{
+	position: absolute;
+	right:-2px;
+	background: #fff;
+	border:1px solid #ddd;
+}
+.rd-select .content li a.option{
+	display: block;
+	padding: 0px 7px;
+	color: inherit;
+}
+.rd-select .content li a.option:hover{
+	color: #fff;
+	background: #5eccff;
+
+}
+
+
+.button-blue,.button-grey,.button-yellow{
+	display: inline-block;
+	width: 120px;
+	height: 30px;
+	line-height: 30px;
+	margin: 0px 10px;
+	font-size: 15px;
+	border: 0;
+	border-radius: 3px;
+}
+.button-blue{
+	color: #fff;
+	background: #5eccff;
+}
+.button-blue:active{
+	background: #3eaccf;
+}
+.button-yellow{
+	color: #fff;
+	background: #ffcc00;
+}
+.button-yellow:active{
+	background: #ddbb00;
+}
+.button-grey{
+	color: #fff;
+	background: #ccc;
+}
+.button-grey:active{
+	background: #3eaccf;
+}
+
+
+
+
+/*LAYOUT*/
+#info-cont .col2-f1{	
+	float: left;
+	width: 45%;
+	
+}
+
+#info-cont .col2-f2{
+	float: right;
+	width: 45%;
+	
+}
+
+/*FORM*/
+.form-fields .field{
+	margin: 15px 0px;
+}
+
+/*Controls*/
+
+.input-wrap{
+	position: relative;
+	height:36px;
+	line-height: 36px;
+	border: 1px solid #ddd;
+}
+
+.input-wrap i{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 36px;
+	height: 100%;
+	background: #f1f3f6 no-repeat center center;
+}
+.input-wrap i.money{
+
+}
+.input-wrap p {
+	position: absolute;
+	left: 36px;
+	top: 0px;
+	right: 36px;
+	height: 100%;
+	padding:0px 5px;
+}
+.input-wrap input{
+	width: 100%;
+	height: 36px;
+	line-height:36px;
+	border:0;
+	
+}
+.input-wrap input:focus{
+	border: 0;
+	box-shadow: none;
+	outline: none;
+}
+
+.input-wrap label {
+	position: absolute;
+	right: 0px;
+	width:36px;
+	height: 100%;
+	line-height: 36px;
+	text-align: center;
+	color: #989898;
+}
+
+.operate-bar{
+	margin:15px 0px;
+	text-align: center;;
+}
+.top-operate-bar{
+	height: 35px;
+	line-height: 35px;
+	margin: 10px 0px;
+	padding: 0px 10px;
+	background: #f7f7f7;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+.top-operate-bar a{
+	margin:0px 5px;
+	color: #666;
+}
+/*PANEL*/
+.info-panel{
+	text-align: center;
+	background: #fff;
+	border: 1px solid #ddd;
+	overflow: hidden;
+}
+.info-panel h4{
+	line-height: 35px;
+	font-size: 14px;
+	color: #333;
+	background: #f7f7f7;
+	border-bottom: 1px solid #ddd;
+}
+.info-panel .content{
+	padding:10px;
+	text-align: center;
+}
+.info-panel p{
+	vertical-align: middle;
+	font-size: 14px;
+	color: #666;
+}
+.info-panel .value{
+	font-size: 18px;
+	color: #1e8cd8;
+}
+
+.module-panel{
+	margin-bottom: 20px;
+	text-align: left;
+	border: 1px solid #ddd;
+	background: #fff;
+}
+.module-panel h2{
+	padding: 0px 15px;
+	line-height: 45px;
+	font-size: 18px;
+	color: #333;
+	border-bottom: 1px solid #ddd;
+}
+.module-panel h3{
+	margin-bottom: 10px;
+	font-size: 14px;
+	color: #666;
+}
+.module-panel .module-panel-content{
+	position: relative;
+	padding: 15px;
+}
+.module-panel .module-panel-pcontent{
+	margin-bottom:30px;
+}
+
+/* Tabs */
+
+.tabs .tabs-nav{
+	
+	border-bottom: 1px solid #ddd;
+}
+.tabs .tabs-nav a{
+	display: inline-block;
+	width: 115px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	font-size: 14px;
+	color: #999;
+	border-right: 1px solid #ddd;
+}
+.tabs .tabs-nav a.active{
+	color:#1e8cd8;
+}
+.tabs .tabs-group{
+	padding: 20px 15px;
+}
+
+
+
+
+#info-cont .tabs2 .tab2-nav{
+	line-height: 35px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+#info-cont .tabs2 .tab2-nav a{
+	margin:0px 15px;
+	color: #333;
+}
+#info-cont .tabs2 .tab2-nav a.active{
+	color:#00c1fc;
+}
+
+/* table form */
+
+.table-form table{
+	width:100%;	
+}
+.table-form td{
+	padding: 10px 15px;
+	border : 1px solid #ddd;
+}
+.table-form td.name{
+	width:120px;	
+}
+
+.table-form .operate td{
+	border: 0;
+}
+
+/*tip-box*/
+#info-cont .tip-box{
+	margin: 15px 0px;
+	padding: 10px 15px;
+	color: #999;
+	background: #f7f7f7;
+	border:1px dashed #ddd;
+}
+#info-cont .tip-box h3.title{
+	margin-left:10px;
+	font-size:14px;
+}
+#info-cont .tip-box h3.title span{
+	vertical-align: middle;
+}
+#info-cont .tip-box .content{
+	line-height: 20px;
+	margin:5px 0px 0px 35px;
+	font-size:12px;
+
+}
+
+/*IMAGE PAGING  */
+.image-paging{
+	float: right;
+}
+.image-paging a{
+	margin:0px 3px;
+}
+.image-paging i{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #ddd;
+	background: url(../../images/image-paging.gif) #f7f7f7 no-repeat;
+}
+.image-paging i.next{
+	background-position: 0px center; 
+}
+.image-paging i.prev{
+	background-position: -20px center; 
+}
+.image-paging i.next-disabled{
+	background-position: -40px center; 
+}
+.image-paging i.prev-disabled{
+	background-position: -60px center; 
+}
+
+
+/*MY MESSAGE*/
+.message-list li{
+	padding:15px 10px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+.message-list .status{
+	margin-left:25px;
+	color: #999;
+}
+.message-list .intro{
+	height: 25px;
+	line-height: 25px;
+	margin: 5px 25px;
+	color: #999;
+}
+.message-list .message-switch{
+	margin-left:15px;
+}
+.message-list .intro-content{
+	display: inline-block;
+	width:50%;
+	height:25px;	
+	vertical-align: middle;
+	text-overflow:ellipsis;
+	white-space:nowrap;	
+	overflow: hidden;
+	 
+}
+.message-list .content{
+	margin: 5px 25px;
+}
+
+
+
+
+/*MY ACCOUNT*/
+.myaccount .deposit td{
+	width : 33.3%;
+	text-align: center;
+}
+.myaccount .deposit .logo i{
+	display: inline-block;
+	width:85px;
+	height: 85px;
+	background: url(../../images/deposit-logo.gif) no-repeat center center;
+}
+.myaccount .deposit .balance h4{
+	font-size: 14px;
+}
+.myaccount .deposit .balance p{
+	padding: 10px 0px;
+	font-size: 24px;
+	color: #1e8cd8;
+}
+.myaccount .deposit .operate{
+	text-align: right;
+}
+.myaccount .deposit .operate a{
+	margin: 5px 0px 10px;
+	text-align: center;
+}
+
+
+.myaccount .deal td{
+	width: 50%;
+	text-align: center;
+}
+
+.myaccount .deal .today{
+	padding-right:15px;
+}
+
+.myaccount .part2 .info-panel .content{
+	height: 100px;
+}
+.myaccount .part2 .info-panel p{
+	padding: 10px 40px;
+	text-align: left;
+}
+
+.myaccount .invest-chart .content{
+	padding: 0px;
+	height: 120px !important;
+}
+.myaccount .chart-container{
+	height: 120px;
+}
+
+.myaccount .account-detail{
+	height : 120px;
+	margin-bottom: 20px;
+	text-align: center;
+	background: #f7f7f7;
+	border: 1px solid #ddd;
+	overflow: hidden;
+}
+
+.myaccount .account-detail li{
+	display: inline-block;
+	margin-top:40px;
+	vertical-align: top;
+
+}
+.myaccount .account-detail h4{
+	font-size: 14px;
+	color: #666;
+}
+.myaccount .account-detail p{
+	font-size: 16px;
+	color: #1e8cd8;
+}
+i.plus,i.minus,i.equal{
+	display: inline-block;
+	width:12px;
+	height:12px;
+	margin:0px 34px;
+	background: url(../../images/symbol.gif) no-repeat;
+}
+i.plus{
+	background-position: 0px center;
+}
+i.minus{
+	background-position: -12px center;
+}
+i.equal{
+	background-position: -24px center;
+}
+
+.myaccount .more{
+	line-height: 35px;
+	padding: 0px 15px;
+	text-align: right;
+}
+.myaccount .more a{
+	color: #1e8cd8;
+}
+
+
+/*BORROW DETAIL*/
+.borrow-detail .basic-info{
+	margin-right: 310px;
+}
+
+.borrow-detail .borrow-sn{
+	margin-left: 10px;
+	font-size: 12px;
+	font-weight: normal;
+	color: #999;
+}
+.borrow-detail .protocol-preview{
+	float:right;
+	font-size: 14px;
+	font-weight: normal;
+	color: #1e8cd8;
+}
+
+
+.borrow-detail .basic-info table{
+	width: 100%;
+	color: #333;
+}
+.borrow-detail .basic-info .part1{
+	height: 120px;
+}
+.borrow-detail .basic-info .part1 td{
+	padding: 10px 0px;
+}
+.borrow-detail .basic-info .part1 .key{
+	font-size: 14px;
+}
+.borrow-detail .basic-info .part1 .value{
+	font-size: 24px;
+}
+.borrow-detail .basic-info .part1 .unit{
+	font-size: 12px;
+}
+.borrow-detail .basic-info .part1 .rmb{
+	color: #f39700;
+}
+.borrow-detail .basic-info i.borrow-process{
+	display: inline-block;
+	width:58px;
+	height:58px;
+	line-height: 58px;
+	font-size: 14px;
+	text-align: center;
+	background: url(../../images/borrow-process.gif) center center no-repeat;
+}
+
+.borrow-detail .basic-info .part2{
+	height: 95px;
+	margin-top: 20px;
+	padding-top: 15px;
+	background: url(../../images/slash.png) repeat;
+}
+
+.borrow-detail .basic-info .part2 td{
+	padding: 10px 15px;
+	font-size: 14px;
+	color: #666;
+	text-align: center;
+}
+.borrow-detail .basic-info .part2 em{
+	display: inline-block;
+	width:100px;
+	margin-left:10px;
+}
+
+.borrow-detail .operate-area{
+	float: right;
+	width: 240px;
+
+	padding: 5px 20px 15px;
+	border: 1px solid #ddd;
+}
+
+.borrow-detail .operate-area p{
+	line-height: 35px;
+}
+.borrow-detail .operate-area .account-info em{
+	margin:0px 10px;
+	font-size: 24px;
+	color: #1e8cd8;
+}
+.borrow-detail .operate-area .profit p{
+	line-height: 24px;
+}
+.borrow-detail .operate-area .profit em{
+	font-size:12px;
+	color: #ffc61b;
+}
+
+.borrow-detail .user-info .portrait{
+	display: inline-block;
+	width: 90px;
+	height: 90px;
+	margin-top: 10px;
+	background: url(../../images/user-portrait.gif) no-repeat center center;
+}
+
+.borrow-detail .info-table{
+	margin-left: 110px;
+}
+.borrow-detail .info-table table{
+	width: 100%;
+	background: #f7f7f7;
+	
+}
+.borrow-detail .info-table table td{
+	padding:10px;
+	border: 1px solid #ddd;
+}
+.borrow-detail .borrow-description{
+	font-size: 14px;
+}
+
+
+
+
+.borrow-detail .image-list table{
+	width: 100%;
+	border-collapse:separate;
+	border-spacing: 5px;
+}
+.borrow-detail .image-list td{
+	height: 180px;
+	text-align: center;
+	background: #f7f7f7;
+	border: 1px solid #ddd;
+}
+.borrow-detail .image-list td img{
+	display: inline-block;
+	height: 80%;
+}
+
+.borrow-detail .borrow-record table{
+	width: 100%;
+	
+	background: #f7f7f7;
+}
+.borrow-detail .borrow-record table td{
+	line-height: 40px;
+}
+.borrow-detail .borrow-record .money{
+	color: #f39700;
+}
+.borrow-detail .borrow-record i.finish{
+	display: inline-block;
+	width: 22px;
+	height: 17px;
+	background: url(../../images/borrowRecordStatus.gif);
+}
+
+.borrow-detail .redpacket-choose{
+	width: 600px;
+	height: 300px;
+	text-align: center;
+	overflow: auto;
+
+}
+.borrow-detail .redpacket-choose .list li{
+	float:left;
+	margin: 20px;
+	
+}
+
+.borrow-detail .redpacket-choose .redpacket{
+	width: 64px;
+	height: 75px;
+	background: url(../../images/redpacket.gif) no-repeat center center;
+}
+.borrow-detail .redpacket-choose .redpacket .value{
+	display: inline-block;
+	margin-top: 33px;
+	margin-left:4px;
+	font-size: 18px;
+	color: #f39700;
+
+}
+.borrow-detail .redpacket-choose .calculate span{
+	margin: 10px;
+}
+.borrow-detail .redpacket-choose .calculate em{
+	font-size: 18px;
+	color: #f39700;
+}
+.borrow-detail .redpacket-choose .operate{
+	margin:20px;
+}

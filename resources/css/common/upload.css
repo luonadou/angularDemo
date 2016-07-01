@@ -1,0 +1,59 @@
+#upload .filed-name{
+    display: inline-block;
+    text-align: right;
+    width: 150px;
+    font-size: 14px;
+}
+#upload .form-group{
+    padding: 10px 0;
+}
+#upload .pickfiles{
+    background: #f7f7f7;
+    width: 120px;
+    height: 30px;
+    color: #666;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+.upload-wrap{
+    display: inline-block;
+}
+.container{
+    text-align: left;
+}
+.upload-wrap .img-preview{
+    padding: 15px 0;
+    height: 102px;
+    overflow: hidden;
+    display: none;
+}
+.upload-wrap .img-preview .item{
+    float: left;
+    position: relative;
+    padding: 1px;
+    margin-right: 10px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ddd;
+}
+.upload-wrap .img-preview .remove{
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    width: 15px;
+    height: 15px;
+    background: #ddd;
+    border-radius: 50%;
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 17px;
+    color: #000;
+    cursor: pointer;
+}
+    

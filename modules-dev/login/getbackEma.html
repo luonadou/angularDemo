@@ -1,0 +1,33 @@
+<div ng-controller="getbackEmaCtrl" class="center-main">
+	<div class="north-content">
+		<h2>找回密码</h2>
+	    <div class="part-cont1">
+	       
+			<form name="form" novalidate ng-submit="submit()">
+				<div class="getback-content">
+					<div class="center">
+						<a class="btn1 blue btnPosi2" ><span class="icons-email"></span>邮箱找回</a>
+	                    <a class="btn1 yellow btnPosi2" ui-sref="login.getbackMob"><span class="icons-mobile"></span>手机找回</a>
+					</div>
+					<div class="centerInp">
+						<div class="layer">
+							<label class="redfont">*</label>
+							<label class="getback-font1">注册邮箱</label>
+							<input type="text" class="getback-sInput" ng-pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})$/"  ng-model="email" required/>
+						</div>
+						<div class="layer">
+							<label class="redfont">*</label>
+							<label class="getback-font1">验证码&nbsp&nbsp&nbsp</label>
+							<input type="text" class="getback-sInput" ng-model="identifyCode" required />
+							<a class="identifyCode"></a>
+						</div>
+						<a class="btn1 green btnPosi1" ui-sref="login.checkEma">提交</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="south-content"></div>
+	
+</div>
+

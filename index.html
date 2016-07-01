@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../resources/css/base.css">	
+	<!-- build:css /resources/css/index.min.css -->
+	<link rel="stylesheet" type="text/css" href="../resources/css/account/account-common.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/common/dialog.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/login/login.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/account/account-rxj.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/account/yjz.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/common/upload.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/login/cq.css" > 	
+	<link rel="stylesheet" type="text/css" href="../resources/css/account/material.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/index/index-rxj.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/common/ui.css">
+	<script type="text/javascript" src="/modules-dev/account/ZeroClipboard.js"></script>
+	<!-- endbuild -->
+	<title ng-bind="$state.current.name +'托管版2.0'">[投资] 投资理财-投资项目-小投资创业项目 托管版2.0</title>
+	<script>
+		var baseUrl = "http://localhost:9000/",
+			v = 20150702;
+	</script>
+</head>
+<body>		
+	<div id="header" ng-component="htmlModule/common/header/header" class=""></div>
+	<div id="content" ui-view></div>	
+	<div id="footer" ng-component="htmlModule/common/footer/footer" class=""></div>
+	<div id="footer" ng-component="htmlModule/share/share" class=""></div>
+	
+
+
+	<script>
+		var js = document.createElement('script');
+		js.type = 'text/javascript';
+		js.src = baseUrl + 'resources/plugins/requirejs/require.min.js';
+		js.setAttribute('data-main', baseUrl + 'main.js');
+		document.body.appendChild(js);	
+	</script>
+</body>
+</html>

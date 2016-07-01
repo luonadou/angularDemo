@@ -1,0 +1,23 @@
+<div ng-controller="checkPswCtrl" class="center-main">
+	<div class="north-content">
+		<h2>找回密码</h2>
+		<div class="part-cont1">
+			<form name="form" novalidate ng-submit="submit()">
+				<div class="getback-content">
+					<div class="checkPsw-center">
+						<label class="fontUser2">手机验证短信已发送至您的手机</label><br>
+						<label class="fontUser1">{{mobile}}</label>
+					</div>
+					<div class="centerInp-checkPsw">
+						<label class="redfont">*</label>
+						<label class="fontUser2">收到的验证码&nbsp&nbsp</label>
+						<input type="text" class="getback-sInput" ng-model="identifyCode" required />
+						<input class="identifycode1" type="button" ng-click="getCode()" id="getcode" value="获取验证码">
+						<a class="btn1 green btnPosi3" ui-sref="login.modifyPsw">提交</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="south-content"></div>
+</div>

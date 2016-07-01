@@ -1,0 +1,194 @@
+<script type="text/ng-template" id="templateId.html">
+  <div class="redpacket-choose">
+  	<div class="list">
+  		<ul class="clearfix">
+  			<li ng-repeat="item in redpacketList">
+  				<div class="redpacket"><span class="value" ng-bind="item.value"></span></div>
+  				<div><input type="checkbox" value="" name="redpacket"/></div>
+  			</li>
+  		</ul>
+  	</div>
+  	<div class="calculate">
+  		<p>
+  			<span>选择红包总数：<em>100</em>元</span>
+  			<span>实际应付金额：<em>1800</em>元</span>
+  		</p>
+  	</div>
+  	<div class="operate">
+  		<a class="button-blue">确定</a>
+  	</div>
+  </div>
+
+</script>
+
+<div ng-controller="bondDetailCtrl"  id="main-cont" class="borrow-detail">
+	<div class="module-panel">
+		<h2>我借钱做生意<span class="borrow-sn">借款编号：150429101638</span><a class="protocol-preview">[协议预览]</a></h2>
+		<div class="module-panel-content clearfix">
+			<div class="operate-area">				    
+		       <div class="account-info">
+		       		<p>账户余额：<em>1,400.00</em>元</p>
+					<p>可投金额：<em>2,000.00</em>元</p>
+		       </div>			
+		       <div class="form-fields">
+		       		<form>
+			       		<div class="input-wrap field">
+			       			<i class=""></i>
+			       			<p><input placeholder="受让金额"/></p>
+			       			<label>元</label>
+			       		</div>
+			       		<div class="profit">
+			       			<p>折让金额：<em>0.05</em>元</p>
+			       			<p>实际应付：<em>0.68</em>元</p>
+			       			<p>预期收益：<em>0.05</em>元</p>
+			       		</div>
+			       		<div class="field">
+			       			<select rd-select  class="select w-fill-select h36" template-div="templateId.html" placeholder="请选择红包">		       				
+			       			</select>
+			       			
+			       		</div>
+			       		
+			       		<div class="field">
+			       			<input type="submit" class="button-blue w-fill-button h36" value="立即投资" />
+			       		</div>
+			       	</form>
+				</div>
+			</div>
+			<div class="basic-info">
+				<div class="part1">
+					<table>
+						<tr class="key">
+							<td>债权总价(元)</td>
+							<td>年化利率</td>
+							<td>剩余期限</td>
+							<td>投标进度</td>
+						</tr>
+						<tr class="value">
+							<td><span class="rmb">￥</span>1000,0000.00 </td>
+							<td>8<span class="unit">%</span></td>
+							<td>5<span class="unit">天</span></td>
+							<td><i class="borrow-process">100%</i></td>
+						</tr>
+					</table>
+				</div>
+				<div class="part2">
+					<table>
+						<tr>
+							<td>还款方式<em>一次性还款</em></td>
+							<td>发布时间<em>2015-04-29</em></td>
+							<td>剩余债权<em>100元</em></td>
+						</tr>
+						<tr>
+							<td>最小投资金额<em>100元</em></td>
+							<td>结束时间<em>2015-04-30</em></td>
+							<td>折让率<em>0.5%</em></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="module-panel">
+		<div class="tabs" tabs>
+			<div class="tabs-nav">
+				<a href="javascript:;" class="active"  tab-index="0">标的详情</a>
+				<a href="javascript:;" tab-index="1">债权转让记录</a>
+			</div>
+			<div class="tabs-group">
+				<div class="borrow-info">
+					<div class="module-panel-pcontent user-info">
+						<h3>用户信息</h3>
+						<div class="clearfix">
+							<div class="portrait floatleft">
+							</div>
+							<div class="info-table">
+								<table>
+									<tr>
+										<td>用户名：x******1</td>
+										<td>婚姻状况：未婚</td>
+										<td>收入范围：3000元以下</td>
+									</tr>
+									<tr>
+										<td>年龄：20岁</td>
+										<td>户籍城市：北京东城区</td>
+										<td>车产：无</td>
+									</tr>
+									<tr>
+										<td>学历：小学</td>
+										<td>工作时间：0-3年</td>
+										<td>房产：无</td>
+									</tr>
+								</table>
+							</div>							
+						</div>
+					</div>
+					<div class="module-panel-pcontent borrow-description">
+						<h3>借款描述</h3>
+						<p>担保标资金周转借1个月，担保标资金周转借1个月，担保标资金周转借1个月担保标资金周转借1个月，担保标资金周转借1个月，担保标资金周转借1个月，担保标资金周转借1个月，担保标资金周转借1个月。</p>
+					</div>
+					<div class="module-panel-pcontent borrow-images">
+						<h3>
+							借款资料
+							<span class="image-paging" 
+							image-paging
+							page-size="pageSize",
+							page="page",
+							total="total",
+							paging-action="pagingAction(page)"
+							></span>
+						</h3>
+						<div class="image-list">
+							<table>
+								<tr>
+									<td ng-repeat="item in imageData"><img ng-src="{{item.src}}" /></td>
+								</tr>								
+							</table>
+						</div>
+					</div>					
+				</div>
+				<div class="borrow-record">
+					<table class="table-line">
+						<thead>
+							<tr>
+								<td>序号</td>
+								<td>投资人</td>
+								<td>投资金额</td>
+								<td>投资时间</td>
+								<td>投资方式</td>
+								<td>状态</td>								
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in borrowRecords">
+								<td ng-bind="$index"></td>
+								<td ng-bind="item.userName"></td>
+								<td ><span class="money">￥</span><span ng-bind="item.bondCapital"></span></td>
+								<td ng-bind="item.time"></td>
+								<td ng-bind="item.style"></td>
+								<td ng-switch="item.status"><span ng-switch-default><i class="finish"></i></td>	
+							</tr>
+						</tbody>
+					</table>
+					<div id="page">	
+						<div paging
+							class="small"
+							page="recordPage" 
+							page-size="recordPageSize" 
+							total="recordTotal"
+							adjacent="2"
+							dots="..."
+							scroll-top="false" 
+							hide-if-empty="false"
+							ul-class="pagination"
+							active-class="active"
+							disabled-class="disabled"
+							show-prev-next="true"
+							paging-action="getRecords(page)">
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

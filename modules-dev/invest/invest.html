@@ -1,0 +1,170 @@
+<div ui-view ng-controller="investCtrl">
+	<div  tabs>
+		<div class="index-invest">
+			<div class="container left">
+				<a tab-index="0">投资列表</a> 
+				<a tab-index="1">债权专区</a>
+			</div>
+		</div>
+		<div>
+			<div>
+				<div class="index-invest">
+					<div class="container bottom">
+						<div class="condition">
+							<span class="l">项目状态：</span>
+							<ul rd-switch
+							switch-type="switchType"
+							switch-action="switchAction1(switchType)">
+							<li class="active" switchType="-1">不限</li>
+							<li switchType="1">招标中</li>
+							<li switchType="2">还款中</li>
+							<li switchType="3">完成</li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+					<div class="condition">
+						<span class="l">投资标种：</span>
+						<ul rd-switch
+						switch-type="switchType"
+						switch-action="switchAction2(switchType)">
+							<li class="active" switchType="-1">不限</li>
+							<li switchType="101">担保标</li>
+							<li switchType="102">抵押标</li>
+							<li switchType="103">信用标</li>
+							<li switchType="104">秒还表</li>
+							<li switchType="105">新手标</li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+					<div class="condition">
+						<span class="l">年化收益：</span>
+						<ul rd-switch
+						switch-type="switchType"
+						switch-action="switchAction3(switchType)">
+							<li class="active" switchType="-1">不限</li>
+							<li switchType="1">0%-6%</li>
+							<li switchType="2">6%-12%</li>
+							<li switchType="3">12%-18%</li>
+							<li switchType="4">18%-20%</li>
+							<li switchType="5">20%以上</li>
+							<div class="clearfix"></div>
+						</ul>
+					</div>	
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="container" >
+				<div class="index-list mt20">
+					<div class="content mt10">
+						<div ng-repeat="item in investData" ng-class="{danbg:item.type==101,dibg:item.type==102,xinbg:item.type==103,miaobg:item.type==104,last:$index==3||$index==7||$index==11,block:true}">
+							<p class="f16" ng-bind='item.title'></p>
+							<p class="light">借款编号：<span ng-bind='item.number'></span></p>
+							<p class="f14 mt15">借款金额：<span class="f18" ng-bind='item.apply'></span></p>
+							<p class="f14 mt5">年化收益：<span ng-bind='item.apply1' class="f18 org"></span></p>
+							<p class="f14 mt5">借款期限：<span ng-bind="item.applyuse"></span></p>
+							<div class="progressbar_1 mt15"> 
+								<div class="bar" ng-style="{width:item.status}"></div> 
+							</div>
+							<p class="light lh24 mt5" ng-bind="item.remark"></p> 
+							<a href="#/invest/borrowDetail" class="bluebtn absolute" ng-class="{graybg:item.statuss==2}">
+								<span ng-if="item.statuss==1">立即投标</span>
+								<span ng-if="item.statuss==2">还款中</span>
+							</a>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div id="page">
+				<div paging
+				class="small"
+				page="investPage" 
+				page-size="investPageSize" 
+				total="investTotal"
+				adjacent="2"
+				dots="..."
+				scroll-top="false" 
+				hide-if-empty="true"
+				ul-class="pagination"
+				active-class="active"
+				disabled-class="disabled"
+				show-prev-next="true"
+				paging-action="investPageSearch(investPage)">
+				</div>
+			</div>
+		</div>
+			<div>
+				<div class="index-invest">
+					<div class="container bottom">
+						<div class="condition">
+							<span class="l">债权状态：</span>
+							<ul rd-switch
+							switch-type="switchType"
+							switch-action="switchAction1(switchType)">
+								<li class="active" switchType="-1">不限</li>
+								<li switchType="1">转让中</li>
+								<li switchType="-2">转让完成</li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+						<div class="condition">
+							<span class="l">年化收益：</span>
+							<ul rd-switch
+							switch-type="switchType"
+							switch-action="switchAction3(switchType)">
+								<li class="active" switchType="-1">不限</li>
+								<li switchType="1">0%-6%</li>
+								<li switchType="2">6%-12%</li>
+								<li switchType="3">12%-18%</li>
+								<li switchType="4">18%-20%</li>
+								<li switchType="5">20%以上</li>
+								<div class="clearfix"></div>
+							</ul>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="container" >
+					<div class="index-list mt20">
+						<div class="content mt10">
+							<div ng-repeat="item in bondData" ng-class="{danbg:item.type==101,dibg:item.type==102,xinbg:item.type==103,miaobg:item.type==104,last:$index==3||$index==7||$index==11,block:true}">
+								<p class="f16" ng-bind='item.title'></p>
+								<p class="light">借款编号：<span ng-bind='item.number'></span></p>
+								<p class="f14 mt15">借款金额：<span class="f18" ng-bind='item.apply'></span></p>
+								<p class="f14 mt5">年化收益：<span ng-bind='item.apply1' class="f18 org"></span></p>
+								<p class="f14 mt5">借款期限：<span ng-bind="item.applyuse"></span></p>
+								<div class="progressbar_1 mt15"> 
+									<div class="bar" ng-style="{width:item.status}"></div> 
+								</div>
+								<p class="light lh24 mt5" ng-bind="item.remark"></p> 
+								<a href="#/invest/bondDetail" class="bluebtn absolute" ng-class="{graybg:item.statuss==2}">
+									<span ng-if="item.types==1">立即受让</span>
+									<span ng-if="item.types==2">转让完成</span>
+								</a>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				
+				</div>
+				<div id="page">
+					<div paging
+					class="small"
+					page="bondPage" 
+					page-size="bondPageSize" 
+					total="bondTotal"
+					adjacent="2"
+					dots="..."
+					scroll-top="false" 
+					hide-if-empty="true"
+					ul-class="pagination"
+					active-class="active"
+					disabled-class="disabled"
+					show-prev-next="true"
+					paging-action="bondPageSearch(bondPage)">
+					</div>
+				</div>
+			</div>	
+		</div>	
+	</div>			
+</div>

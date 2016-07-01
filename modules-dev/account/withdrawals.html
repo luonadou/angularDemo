@@ -1,0 +1,74 @@
+<div ng-controller="withdrawlsCtrl"  class="withdrawls">
+	<h2>账户提现</h2>
+	<div class="part-cont">
+		<form name="form" novalidate ng-submit="submit()">
+			<table class="table-line">
+				<tr>
+				    <td class="td-fixed">账户余额：</td>
+				    <td class="td-left">0.00元</td>
+				</tr> 
+				<tr>
+					<td class="td-fixed">可用余额：</td>
+					<td class="td-left">0.00元</td>
+				</tr>
+				<tr>
+					<td class="td-fixed">提现金额：</td>
+					<td class="td-left"><input type="text" class="account-Input"  ng-pattern="/^[1-9]\d*$/" ng-maxlength="9" ng-model="amount"></td>
+				</tr>
+			</table>
+			<input type="submit" class="btn account-blue accountBtnPosi2" value="提交" />
+		</form>
+	</div>
+	<div class="part-cont">
+		<div class="holder">
+			<div class="content1">
+				<span class="tip-lamp"></span>
+			</div>
+			<div class="content2">
+				<span>温馨提示：</span><br>
+				<span>预计到账时间：</span><br>
+				<span>T日10：00AM之前申请提现，预计当日到账；T日10：10AM以后申请提现，预计最晚T+1个工作日到账；</span><br>
+				<span>遇双休日或法定节假日顺延，实际到账时间根据账户托管方（第三方支付平台）及提现银行而有所差异</span>
+			</div>
+		</div>
+	</div>
+    	<table class="account-table">
+    		<thead class="thead-holder">
+	    		<tr >
+	    			<td>提现时间</td>
+	    			<td>提现流水号</td>
+	    		    <td>提现银行|账户</td>
+	    		    <td>提现金额（元）</td>
+	    		    <td>手续费（元）</td>
+	    		    <td>状态</td>
+	    		</tr>
+    	    </thead>
+    	    <tbody>
+    	    	<tr ng-repeat="item in data">
+    			    <td ng-bind="item.withdrawTime"></td>
+    			    <td ng-bind="item.serialNum"></td>
+    			    <td ng-bind="item.withdrawWay"></td>
+    			    <td ng-bind="item.withdrawMoney"></td>
+    			    <td ng-bind="item.fee"></td>
+    			    <td ng-bind="item.status"></td>
+    		    </tr>
+    	    </tbody>
+    	</table>
+    <div id="page">
+    	<div paging 
+    	class="small"
+		page="page" 
+		page-size="3" 
+		total="total"
+		adjacent="2"
+		dots="..."
+		scroll-top="false" 
+		hide-if-empty="true"
+		ul-class="pagination"
+		active-class="active"
+		disabled-class="disabled"
+		show-prev-next="true"
+		paging-action="getData(2)">
+    	</div>
+    </div>
+</div>

@@ -1,0 +1,110 @@
+<div ng-controller="homeCtrl">
+	<div rd-slide id="banner" data="data">
+		<div class="banner">
+			<a ng-repeat="index in data"  href="" ng-style="{background:'url({{index.src1}}) no-repeat center'}"></a>
+		</div>
+		<ul class="">
+			<li ng-repeat="index in data" tab-index="{{$index}}"></li>
+		</ul>
+	</div>
+	<div class="container">
+		<div class="webtip">
+			<div class="l">网站公告</div>
+			<span><a href="javascript:;" ng-bind='webtip'></a></span>
+			<a class="more" href="javascript:;">更多</a>
+		</div>
+		<div class="index-list">
+			<div class="title">
+				<h2 class="l">投资列表</h2>
+				<a class="more mt5" href="#/invest">更多</a>
+			</div>
+			<div class="clearfix"></div>
+			<div class="content mt10">
+				<div ng-repeat="item in data" ng-class="{danbg:item.type==101,dibg:item.type==102,xinbg:item.type==103,miaobg:item.type==104,last:$index==3,block:true}">
+					<p class="f16" ng-bind='item.title'></p>
+					<p class="light">借款编号：<span ng-bind='item.number'></span></p>
+					<p class="f14 mt15">借款金额：<span class="f18" ng-bind='item.apply'></span></p>
+					<p class="f14 mt5">年化收益：<span ng-bind='item.apply1' class="f18 org"></span></p>
+					<p class="f14 mt5">借款期限：<span ng-bind="item.applyuse"></span></p>
+					<div class="progressbar_1 mt15"> 
+						<div class="bar" ng-style="{width:item.status}"></div> 
+					</div>
+					<p class="light lh24 mt5" ng-bind="item.remark"></p> 
+					<a href="#/invest/borrowDetail" class="bluebtn absolute">
+						<span ng-if="item.statuss==1">立即投标</span>
+					</a>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="index-list">
+			<div class="title">
+				<h2 class="l">债权专区</h2>
+				<a class="more mt5" href="#/invest">更多</a>
+			</div>
+			<div class="clearfix"></div>
+				<div class="content mt10">
+					<div ng-repeat="item in data" ng-class="{danbg:item.type==101,dibg:item.type==102,xinbg:item.type==103,miaobg:item.type==104,last:$index==3,block:true}">
+						<p class="f16" ng-bind='item.title'></p>
+						<p class="light">借款编号：<span ng-bind='item.number'></span></p>
+						<p class="f14 mt15">借款金额：<span class="f18" ng-bind='item.apply'></span></p>
+						<p class="f14 mt5">年化收益：<span ng-bind='item.apply1' class="f18 org"></span></p>
+						<p class="f14 mt5">借款期限：<span ng-bind="item.applyuse"></span></p>
+						<div class="progressbar_1 mt15"> 
+							<div class="bar" ng-style="{width:item.status}"></div> 
+						</div>
+						<p class="light lh24 mt5" ng-bind="item.remark"></p> 
+						<a href="#/invest/bondDetail" class="bluebtn absolute"><span ng-if="item.types==1">立即受让</span></a>
+					</div>
+				</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="safe">
+			<h2>安全保障</h2>
+			<dl>
+				<dt class="l">
+					<img src="../../resources/images/tuoguan.png">
+				</dt>
+				<dd class="l ml15">
+					<p class="f18 mt25">资金托管</p>
+					<p class="f14">第三方资金托管</p>
+				</dd>
+			</dl>
+			<dl>
+				<dt class="l">
+					<img src="../../resources/images/shenhe.png">
+				</dt>
+				<dd class="l ml15">
+					<p class="f18 mt25">准入审核</p>
+					<p class="f14">严格的借款人准<br>入审核</p>
+				</dd>
+			</dl>
+			<dl>
+				<dt class="l">
+					<img src="../../resources/images/jianguan.png">
+				</dt>
+				<dd class="l ml15">
+					<p class="f18 mt25">动态监管</p>
+					<p class="f14">抵押资产动态监<br>管</p>
+				</dd>
+			</dl>
+			<dl class="last">
+				<dt class="l">
+					<img src="../../resources/images/zhuichang.png">
+				</dt>
+				<dd class="l ml15">
+					<p class="f18 mt25">逾期追偿</p>
+					<p class="f14">有效的逾期追偿<br>制度</p>
+				</dd>
+			</dl>
+			<div class="clearfix"></div>
+		</div>
+		<div class="cooperate">
+			<h2>合作伙伴</h2>
+			<div ng-repeat="item in data">
+				<img  ng-src="{{item.src}}">
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,121 @@
+<div ng-controller="investCtrl" class="invest ">
+	<h2>我的投资</h2>
+	<div class="apply_record">
+		<h3 class="tl">投资项目</h3>
+		<table class="table-noline">
+			<thead>
+				<tr><td>标的名称</td><td>标的进度</td><td>总投资金额（元）</td><td>已回款（元）</td><td>待收款（元）</td><td>查看</td></tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in data">
+					<td ng-bind="item.time"></td>
+					<td >
+						<div class="progressbar_1"> 
+						    <div class="bar" ng-style="{width:item.apply1}"></div> 
+						</div>   
+					</td>
+					<td ng-bind="item.applyuse"></td>
+					<td>
+						<span ng-if="item.status==0">不通过</span>
+						<span ng-if="item.status==1">通过</span>
+					</td>
+					<td ng-bind="item.remark"></td>
+					<td><a href="#/account/payment">回款计划</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+		<div id="page">
+			<div paging
+			class="small"
+			page="couponPage" 
+			page-size="couponPageSize" 
+			total="couponTotal"
+			adjacent="2"
+			dots="..."
+			scroll-top="false" 
+			hide-if-empty="true"
+			ul-class="pagination"
+			active-class="active"
+			disabled-class="disabled"
+			show-prev-next="true"
+			paging-action="couponPageSearch(couponPage)">
+			</div>
+		</div>
+	<div class="apply_record">
+		<h3>投资记录</h3>
+		<div class="tabs2">
+			<div class="tab2-nav">
+				<a href="" ng-class="{active:(tab.cont1)}" ng-click="tabSearch(1)">投资中</a>
+			<a href="" ng-class="{active:tab.cont2}" ng-click="tabSearch(2)">已结算</a>
+			</div>
+			<div>
+				<!-- 投资中 -->
+				<div class="tabs-cont" ng-class="{active:tab.cont1}">
+					<table class="table-noline">
+						<thead>
+							<tr><td>标的名称</td><td>年化收益</td><td>投资金额（元）</td><td>计息起始日</td><td>到期日</td><td>已收收益（元）</td><td>待收收益（元）</td></tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in data">
+								<td ng-bind="item.time"></td>
+								<td ng-bind="item.apply"></td>
+								<td ng-bind="item.applyuse"></td>
+								<td>
+									<span ng-if="item.status==0">不通过</span>
+									<span ng-if="item.status==1">通过</span>
+								</td>
+								<td ng-bind="item.apply"></td>
+								<td ng-bind="item.apply"></td>
+								<td ng-bind="item.apply"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<!-- 已结算 -->
+				<div class="tabs-cont" ng-class="{active:tab.cont2}">
+					<table class="table-noline">
+						<thead>
+							<tr><td>标的名称</td><td>年化收益</td><td>投资金额（元）</td><td>计息起始日</td><td>到期日</td><td>已收收益（元）</td><td>待收收益（元）</td></tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in data">
+								<td ng-bind="item.time"></td>
+								<td ng-bind="item.apply"></td>
+								<td ng-bind="item.applyuse"></td>
+								<td>
+									<span ng-if="item.status==0">不通过</span>
+									<span ng-if="item.status==1">通过</span>
+								</td>
+								<td ng-bind="item.apply"></td>
+								<td ng-bind="item.apply"></td>
+								<td ng-bind="item.apply"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+		</div>
+		
+	</div>
+	
+	<div id="page">
+		<div paging
+		class="small"
+		page="page" 
+		page-size="pageSize" 
+		total="total"
+		adjacent="2"
+		dots="..."
+		scroll-top="false" 
+		hide-if-empty="true"
+		ul-class="pagination"
+		active-class="active"
+		disabled-class="disabled"
+		show-prev-next="true"
+		paging-action="pageSerch(page)">
+		</div>
+	</div>
+</div>

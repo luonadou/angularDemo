@@ -1,0 +1,213 @@
+.container{
+	width: 85%;
+	min-width:990px;
+	margin: 0 auto;
+	text-align: left;
+	color: #333;
+}
+.container h2{
+	font-size: 18px;
+	font-weight: normal;
+	margin-left: 15px;
+}
+/*banner*/
+
+#banner{
+	height: 396px;
+	overflow: hidden;
+	position: relative;
+}
+#banner .banner{
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	width:100%;
+}
+#banner a{
+	display: inline-block;
+	width:100%;
+	height: 396px;
+	display: none;
+}
+#banner .show{
+	display: block;
+}
+#banner .imgAnimation{
+	display: block;
+    animation-name: imgAnimation;
+    animation: imgAnimation 5s alternate infinite;
+    -webkit-animation: imgAnimation 5s alternate infinite;
+    -moz-animation: imgAnimation 5s alternate infinite;
+ }
+ 
+ @-webkit-keyframes imgAnimation{
+    10%{ opacity: 0.1}
+    /*50%{ opacity: 0.5}*/
+    100%{ opacity: 1}
+ }
+  @-moz-keyframes imgAnimation{
+    10%{ opacity: 0.1}
+    /*50%{ opacity: 0.5}*/
+    100%{ opacity: 1}
+ }
+
+#banner ul{
+	position: absolute;
+	left: 50%;
+	bottom: 20px;
+}
+#banner li{
+	float: left;
+	width:70px;
+	height:5px;
+	background: #fff;
+	margin:0 8px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+#banner li.active{
+	background: #c3c3c3;
+}
+
+/*网站公告*/
+.webtip{
+	height: 30px;
+	line-height: 30px;
+	border:1px solid #ddd;
+	font-size: 14px;
+	padding: 7px 0px 7px 15px;
+}
+.webtip .l{
+	border-right:1px solid #ddd;
+	padding-right: 15px;
+	margin-right: 20px;
+}
+.webtip span a{
+	color: #999;
+}
+a.more{
+	float: right;
+	color: #666;
+	font-size: 12px;
+	margin-right: 15px;
+}
+.container .title{
+	margin-top: 40px;
+}
+/*投资列表 债权列表*/
+.danbg{
+	background: url(../../images/dan1.png) no-repeat right top;
+}
+.dibg{
+	background: url(../../images/di1.png) no-repeat right top;
+}
+.xinbg{
+	background: url(../../images/xin1.png) no-repeat right top;
+}
+.miaobg{
+	background: url(../../images/miao1.png) no-repeat right top;
+}
+.index-list .content .block{
+	position: relative;
+	width: 22%;
+	float: left;
+	border:1px solid #ddd;
+	padding: 20px 7px 0;
+	height: 320px;
+	margin: 0 4% 3% 0;
+	border-radius: 5px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+}
+.index-list .content .block.last{
+	margin-right: 0px;
+}
+.bluebtn{
+	display: inline-block;
+	background: #5eccff;
+	color: #fff;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	width: 100%;
+	font-size: 16px;
+	bottom: 0px;
+	left: 0px;
+}
+/*安全保障*/
+.safe{
+	margin-top: 40px;
+	width: 100%;
+}
+.safe dl{
+	width:22%;
+	float: left;
+	margin:10px 0 80px 0;
+	margin-right: 4%
+}
+.safe dl.last{
+	margin-right: 0;
+}
+/*合作伙伴*/
+.cooperate{
+	margin-bottom: 25px;
+}
+.cooperate img{
+	width:184px;
+	height: 70px;
+	border:1px solid #ddd;
+	float: left;
+	margin: 15px 15px 15px 0;
+}
+.cooperate img.last{
+	margin-right: 0;
+}
+
+/*投资 债权列表页*/
+.index-invest{
+	border-bottom: 1px solid #ddd;
+	font-size: 14px;
+	line-height: 40px;
+}
+.index-invest .left{
+	border-left: 1px solid #ddd;
+}
+.index-invest .container a{
+	border-right: 1px solid #ddd;
+	display: inline-block;
+	width: 120px;
+	text-align: center;
+	cursor: pointer;
+	color: #999;
+}
+.index-invest .container a.active{
+	color: #1e8cd8;
+}
+.index-invest .container.bottom{
+	padding: 15px;
+}
+.index-invest .condition{
+	line-height: 30px;
+}
+.index-invest .condition span{
+	margin-right: 15px;
+}
+.index-invest .condition ul{
+	margin-top: 4px;
+	display: inline-block;
+}
+.index-invest .condition li{
+	float: left;
+	height: 24px;
+	line-height: 24px;
+	padding:0 3px;
+	margin:0 3px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.index-invest .condition li.active{
+	background: #5eccff;
+	color: #fff
+}

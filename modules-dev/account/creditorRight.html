@@ -1,0 +1,193 @@
+<div ng-controller="creditorRightCtrl">
+	<h2>{{title}}</h2>
+	<input type="text" ng-model="pages" />
+	<div ng-show="showTabs">
+		<div class="tabs2" tabs>
+			<div class="tab2-nav">
+				<a href="" ng-click="getRows()">可转让</a>
+				<a href="" ng-click="getRows()">转让中</a>
+				<a href="" ng-click="getRows()">已转出</a>
+				<a href="" ng-click="getRows()">已转入</a>
+			</div>
+			<div>
+				<!-- 可转让 -->
+				<div>	
+					<table class="table-noline">
+						<thead>
+							<tr>
+								<td>标的名称</td>
+								<td>年化收益</td>
+								<td>投资金额(元)</td>
+								<td>持有期限</td>
+								<td>计息起始日</td>
+								<td>到期日</td>
+								<td>本期回款日</td>
+								<td>操作</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in data">
+								<td ng-bind="item.borrowName"></td>
+								<td ng-bind="item.rateYear"></td>
+								<td ng-bind="item.bondCapital"></td>
+								<td ng-bind=""></td>
+								<td ng-bind="item.addTime"></td>
+								<td ng-bind=""></td>
+								<td ng-bind=""></td>
+								<td><a href="javascript:;" ng-click="outSet()">转让</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- 转让中 -->
+				<div>	
+					<table class="table-noline">
+						<thead>
+							<tr>
+								<td>债权价值(元)</td>
+								<td>转让折扣率</td>
+								<td>转让价格(元)</td>
+								<td>转让时间</td>
+								<td>转让进度</td>
+								<td>年化收益</td>
+								<td>本期回款日</td>
+								<td>剩余有效期</td>
+								<td>操作</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in data">
+								<td ng-bind="item.bondCapital"></td>
+								<td ng-bind="item.discountRate"></td>
+								<td ng-bind="item.sellingPrice"></td>
+								<td ng-bind="item.addTime"></td>
+								<td ng-bind="item.sellingProgress"></td>
+								<td ng-bind="item.rateYear"></td>
+								<td ng-bind="item.repaymentTime"></td>
+								<td ng-bind="item.remainValidDays"></td>
+								<td ng-bind=""></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- 已转出 -->
+				<div>	
+					<table class="table-noline">
+						<thead>
+							<tr>
+								<td>债权价值(元)</td>
+								<td>转让折扣率</td>
+								<td>转让价格(元)</td>
+								<td>应收收益(元)</td>
+								<td>手续费(元)</td>
+								<td>赎回金额(元)</td>
+								<td>转让成功时间</td>
+								<td>操作</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in data">
+								<td ng-bind="item.bondCapital"></td>
+								<td ng-bind="item.discountRate"></td>
+								<td ng-bind="item.sellingPrice"></td>
+								<td ng-bind="item.soldInterest"></td>
+								<td ng-bind="item.manageFee"></td>
+								<td ng-bind=""></td>
+								<td ng-bind="item.completeTime"></td>
+								<td ng-bind=""></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- 已转入 -->
+				<div>	
+					<table class="table-noline">
+						<thead>
+							<tr>
+								<td>债权价值(元)</td>
+								<td>转让折扣率</td>
+								<td>转入价格(元)</td>
+								<td>应付收益(元)</td>
+								<td>转入时间</td>
+								<td>操作</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in data">
+								<td ng-bind="item.bondCapital"></td>
+								<td ng-bind="item.discountRate"></td>
+								<td ng-bind="item.bondCapital"></td>
+								<td ng-bind="item.bondInterest"></td>
+								<td ng-bind="item.addTime"></td>
+								<td ng-bind=""></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+			</div>
+		</div>
+		<div id="page">	
+			<div paging
+				class="small"
+				page="pages" 
+				page-size="pageSizes" 
+				total="totals"
+				adjacent="2"
+				dots="..."
+				scroll-top="false" 
+				hide-if-empty="false"
+				ul-class="pagination"
+				active-class="active"
+				disabled-class="disabled"
+				show-prev-next="true"
+				paging-action="pageSearch(page)">
+			</div>	
+		</div>
+	</div>
+
+	<!-- 转出设置 -->
+	<div ng-show="showOutSet">	
+		<form novalidate>
+			<div class="part-cont">	
+				<div class="table-form">			
+					<table>
+						<tr>
+							<td class="name">债权价值：</td>
+							<td class="value"><input class="textbox" size="30" required  /></td>
+						</tr>
+						<tr>
+							<td class="name">转让债权：</td>
+							<td class="value"><input class="textbox" size="30" placeholder="金额必须小于等于债权价值"/></td>
+						</tr>
+						<tr>
+							<td class="name">转让折扣率：</td>
+							<td class="value"><input class="textbox" size="30"/></td>
+						</tr>
+						<tr>
+							<td class="name">转让价格：</td>
+							<td class="value"><input class="textbox" size="30"/></td>
+						</tr>
+					</table>
+				</div>							
+				<div class="tip-box">
+					<h3 class="title"><i class="tip-lamp"></i><span>温馨提示：</span></h3>
+					<div class="content">
+						<p>1.转让成功后可赎回金额=本金*(1-转让折扣率)+当前应收收益-转让手续费</p>
+						<p>2.手续费将从转让后投资人支付的眉笔成交额中扣除0.2%</p>
+						<p>3.当期应收收益将由投资人投资时支付</p>
+					</div>
+				</div>
+				<div class="protocol-box">
+					
+				</div>				
+				<div class="operate-bar">
+					<input type="submit" class="button-blue" value="保存"/>
+					<input type="button" class="button-grey" value="返回" ng-click="back()" />
+				</div>
+			</div>	
+		</form>
+	</div>
+	
+	
+</div>

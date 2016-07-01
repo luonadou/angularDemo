@@ -1,0 +1,23 @@
+<div ng-controller="loginCtrl">
+	<div id="content-top" ui-view>
+		<div class="top login">
+			<div class="top-cont ">
+				<form name="form"  ng-submit="submit()" novalidate="novalidate" class="form-horizontal" role="form">
+					<div id="login" class="form-group">				
+						<div class="input-group">
+							<span class="input-group-addon" ></span>
+							<input required ng-required-err-type="loginError" ng-pattern="/[a-zA-Z]/" ng-model="user.name" class="text-btn" type="text" name="name" placeholder="请输入用户名/邮箱/手机号">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon" ></span>
+							<input required ng-required-err-type="loginError" ng-model="user.password" class="text-btn" type="password" name="password" placeholder="请输入密码">
+						</div>
+						<div class="remember"><!-- <input type="checkbox">记住用户名 --> <a  id="forget" target="_blank" ui-sref="login.getbackMob">忘记密码?</a></div>
+						<input id="submit-login" type="submit" value="立即登录">
+						<div class="remember">没有账号? <a  ui-sref="register">免费注册</a></div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>	
+</div>

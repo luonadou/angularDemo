@@ -1,0 +1,26 @@
+<div ng-controller="headerCtrl" id="header">
+	<div class="top">
+		<div class="top-cont">
+			<div class="left">
+				<span>客服热线：400-800-3136</span>
+				<span>服务时间：9:00-21:00</span>
+				<span>关注我们：</span>
+		    </div> 
+		    <div class="right">
+		    	立即<a id="login" ui-sref="login">登录</a>
+		    	<a id="register" ui-sref="register">免费注册入口</a>
+		    </div>
+	    </div>		    
+	</div>
+	<div class="top head-middle">
+		<div class="top-cont">
+	    	<div class="left"><img src="../resources/images/logo.jpg" alt=""></div>
+	    	<div class="right nav">
+	    		<a ng-class="{active: $state.includes('home')}" ui-sref="home">首页</a>
+	    		<a ng-class="{active: $state.includes('invest')}" ui-sref="invest">我要投资</a>
+	    		<a ng-class="{active: $state.includes('account')}" ui-sref="account.myaccount">我的账户</a>
+	    	</div>
+	    </div>
+	</div>
+		
+</div>

@@ -1,0 +1,53 @@
+<div ng-controller="borrowdetailCtrl">
+	<h2>借款详情</h2>
+	<div class="apply_record">
+		<h3></h3>
+		<table class="table-noline">
+			<thead>
+				<tr><td>标的名称</td><td>借款类型</td><td>借款金额（元）</td><td>年化收益</td><td>借款期限</td><td>借款进度</td><td>状态</td></tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in data">
+					
+					<td ng-bind="item.remark"></td>
+					<td>
+						<span ng-if="item.type==101"><img src="../../resources/images/dan.png"></span>
+						<span ng-if="item.type==102"><img src="../../resources/images/miao.png"></span>
+						<span ng-if="item.type==103"><img src="../../resources/images/xin.png"></span>
+						<span ng-if="item.type==104"><img src="../../resources/images/di.png"></span>
+					</td>
+					<td ng-bind="item.apply"></td>
+					<td ng-bind="item.apply1"></td>
+					<td ng-bind="item.time"></td>
+					<td>
+						<div class="progressbar_1"> 
+						    <div class="bar" ng-style="{width:item.apply1}"></div> 
+						</div>   
+					</td>
+					<td>
+						<span ng-if="item.status==0">不通过</span>
+						<span ng-if="item.status==1">通过</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div id="page">
+		<div paging
+		class="small"
+		page="page" 
+		page-size="3" 
+		total="total"
+		adjacent="2"
+		dots="..."
+		scroll-top="false" 
+		hide-if-empty="true"
+		ul-class="pagination"
+		active-class="active"
+		disabled-class="disabled"
+		show-prev-next="true"
+		paging-action="pageSerch(2)">
+		</div>
+	</div>
+</div>

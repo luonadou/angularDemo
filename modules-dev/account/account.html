@@ -1,0 +1,22 @@
+<div ng-controller="accountCtrl">
+	<div id="content-top">
+		<div class="top user">
+			<dl class="top-cont ">
+				<dt><img src="../resources/images/default-user.jpg" alt=""></dt>
+				<dd>
+					<h3>上午好！<span ng-bind='user.user'></span>，欢迎登录！一日之计在于晨！</h3>
+					<p>用户名：<span ng-bind='user.name'></span> 
+						<span class="user-info"></span><span class="user-screen"></span><span class="user-email"></span>
+						<span class="line"></span>第三方账户：<span ng-bind='user.account' class="user-account"></span><span class="line"></span>您有<span ng-bind='user.info' class="user-info-num">27</span>条信息未读
+					</p>
+				</dd>
+			</dl>
+		</div>
+	</div>
+	<div id="main-cont"  >
+		<ul class="left nav">
+			<li ng-repeat="item in navDate"><a ui-sref-active="active" ui-sref="{{item.state}}">{{item.name}}<i class="icon-chevron-right"></i></a></li>
+		</ul>
+		<div ui-view id="info-cont"></div>
+	</div>
+</div>

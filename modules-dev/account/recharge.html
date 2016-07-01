@@ -1,0 +1,102 @@
+<div ng-controller="rechargeCtrl" >
+	<div  tabs>
+		<div class="recharge-nav">
+			<a tab-index="0" class="recharge-label">快捷充值</a>
+			<a tab-index="1" class="recharge-label">网银充值</a>
+		</div>
+	    <div>
+	    	<div class="recharge-tab">
+	    		<form novalidate name="form" submit="submit()">
+	    			<div class="bank">
+	    				<div class="bank-content">
+	    					<span style="color:#00c0ff">银行卡</span>
+		    				<span style="font-size:16px">Bank</span>
+		    				<span class="account-font2">{{bankKind}}</span><br><br>
+		    				<span>{{bank}}</span><br>
+		    				<span>{{cardNo}}</span>
+	    				</div>
+	    			</div>
+	    			<div class="tab-amount">
+		    			<span >可用余额：</span><span name="balance" class="account-font1">￥{{balance}}</span>
+		    		</div>
+		    		<div class="tab-amount">
+			    		<span>充值金额：</span>
+			    	    <input type="text" class="account-Input" ng-model="amount" ng-maxlength="9" retuired ng-pattern="/^[1-9]\d*$/" />
+			    	</div>
+		    	    <button type="submit" class="btn account-blue accountBtnPosi">提交</button>
+	    		</form>
+	    	</div>
+	    	<div class="recharge-tab">
+	    		<form ng-submit="submit()" name="form" novalidate> 
+	    			<div class="tab-amount2">
+			    		<span >可用余额：</span><span name="balance" class="account-font1">￥{{balance}}</span>
+			    	</div>
+			    	<div class="tab-amount1">
+			    		<span>充值银行：</span>
+			    		<select name="rechargeBank" class="recharge-select">
+			    			<option value="0">工商银行</option>
+			    			<option value="1">中国银行</option>
+			    			<option value="1">建设银行</option>
+			    			<option value="1">农业银行</option>
+			    			<option value="1">交通银行</option>
+			    		</select>
+			    	</div>
+			    	<div class="tab-amount1">
+			    		<span>充值金额：</span>
+			    	    <input type="text" class="account-Input" ng-model="amount" ng-maxlength="9" retuired ng-pattern="/^[1-9]\d*$/" />
+			    	</div>
+		    	    <button type="submit" class="btn account-blue accountBtnPosi1">提交</button>
+		    	</form>
+	    	</div>
+	    </div>
+	</div>
+
+	<div class="part-cont">
+		<div class="holder">
+			<div class="content1">
+				<span class="tip-lamp" ></span>
+			</div>
+			<div class="content2">
+				<span>温馨提示：</span><br>
+				<span>1、充值/提现必须为开通网上银行的借记卡，不支持存折、信用卡充值。</span><br>
+				<span>2、充值期间，请勿关闭浏览器，待充值成功并返回后，可在系统中查看充值金额。</span><br>
+				<span>3、严禁信用卡套现、虚假交易等行为。</span>
+			</div>
+		</div>
+	</div>
+    	<table class="account-table">
+    		<thead class="thead-holder">
+	    		<tr >
+	    			<td>充值时间</td>
+	    			<td>充值流水号</td>
+	    		    <td>支付方式</td>
+	    		    <td>充值金额（元）</td>
+	    		</tr>
+    	    </thead>
+    	    <tbody>
+    	    	<tr ng-repeat="item in data">
+    			    <td ng-bind="item.rechargeTime"></td>
+    			    <td ng-bind="item.serialNum"></td>
+    			    <td ng-bind="item.rechargeWay"></td>
+    			    <td ng-bind="item.rechargeMoney"></td>
+    		    </tr>
+    	    </tbody>
+    	</table>
+    <div id="page">
+    	<div paging 
+    	class="small"
+		page="page" 
+		page-size="3" 
+		total="total"
+		adjacent="2"
+		dots="..."
+		scroll-top="false" 
+		hide-if-empty="true"
+		ul-class="pagination"
+		active-class="active"
+		disabled-class="disabled"
+		show-prev-next="true"
+		paging-action="getData(2)">
+    	</div>
+    </div>
+</div>

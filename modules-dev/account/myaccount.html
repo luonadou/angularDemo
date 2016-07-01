@@ -1,0 +1,116 @@
+<div ng-controller="myaccountCtrl" class="myaccount">
+	<h2>我的账户</h2>
+	<div class="part-cont part1 clearfix">
+		<div class="col2-f1 deposit">
+			<table>
+				<tr>
+					<td class="logo"><i></i></td>
+					<td class="balance">
+						<h4>可用余额：</h4>
+						<p>300.26</p>
+					</td>
+					<td class="operate">
+						<a href="#/account/withdrawals" class="button-yellow">提现</a><br />
+						<a href="#/account/recharge" class="button-blue">充值</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col2-f2 deal">
+			<table>
+				<tr>
+					<td class="today">
+						<div class="info-panel">
+							<h4><span>今日待收</span><span ng-show="isBorrower">&nbsp;|&nbsp;今日待还</span></h4>
+							<div class="content">
+								<p><span class="value">300.26</span><span ng-show="isBorrower" class="value">&nbsp;&nbsp;300.26</span></p>
+							</div>
+						</div>
+					</td>
+					<td class="profit">
+						<div class="info-panel">
+							<h4>累计净收益</h4>
+							<div class="content">
+								<p><span class="value">300.26</span></p>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="part-cont part2 clearfix">
+		<div class="col2-f1">
+			<div class="info-panel receive">
+				<h4>待收资产</h4>
+				<div class="content">
+					<p><span>待收本金：</span><span class="value">300.26</span></p>
+					<p><span>待收利息：</span><span class="value">300.26</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="col2-f2">
+			<div class="info-panel repay" ng-show="isBorrower">
+				<h4>待还资产</h4>
+				<div class="content">
+					<p><span>待还本金：</span><span class="value">300.26</span></p>
+					<p><span>待还利息：</span><span class="value">300.26</span></p>
+				</div>
+			</div>
+			<div class="info-panel invest-chart" ng-show="isInvestor">
+				<h4>近期投资</h4>
+				<div class="content">
+					<div echarts class="chart-container" options="investChartOptions">
+					</div>
+				</div>
+			</div>
+		</div>		
+	</div>
+	<div class="part-cont part3">
+		<div class="account-detail">
+			<ul>
+				<li><h4>账户总额</h4><p>991617.9</p></li>
+				<li><h4><i class="equal"></i></h4></li>
+				<li><h4>可用余额</h4><p>962517364</p></li>
+				<li><h4><i class="plus"></i></h4></li>
+				<li><h4>冻结金额</h4><p>1000</p></li>
+				<li><h4><i class="plus"></i></h4></li>
+				<li><h4>待收资金</h4><p>27800</p></li>
+				<li><h4><i class="minus"></i></h4></li>
+				<li><h4>待还资金</h4><p>492.18</p></li>
+			</ul>
+		</div>		
+	</div>
+
+	<h2>我的推荐</h2>
+	<div class="recommond">
+		
+			<table class="table-noline">
+				<thead>
+					<tr>
+						<td>标的名称</td>
+						<td>金额(元)</td>
+						<td>年利率</td>
+						<td>期限</td>
+						<td>发布时间</td>
+						<td>进度</td>
+						<td>操作</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in data">
+						<td ng-bind="item.borrowName"></td>
+						<td ng-bind="item.bondCapital"></td>
+						<td ng-bind="item.rateYear"></td>						
+						<td ng-bind=""></td>
+						<td ng-bind="item.addTime"></td>
+						<td><i class="process" ng-style="{width:process}"></i></td>
+						<td><a href="javascript:;">查看详情</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="more"><a href="javascript:;">查看所有可投借款&gt;&gt;</a></div>	
+	</div>
+	
+	
+</div>

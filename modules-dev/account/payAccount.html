@@ -1,0 +1,33 @@
+<div ng-controller="payAccountCtrl">
+	<h2>支付账户</h2>
+	<div class="table-form part-cont">
+		<form novalidate name="form"  ng-submit="submit()">
+			<table>
+				<tr>
+					<td class="name">真实姓名：</td>
+					<td class="value"><input class="textbox" size="30" required ng-model="name" /></td>
+				</tr>
+				<tr>
+					<td class="name">身份证：</td>
+					<td class="value"><input class="textbox" required ng-pattern="/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/" ng-model="id" size="30"/></td>
+				</tr>
+				<tr>
+					<td class="name">手机号码：</td>
+					<td class="value"><input class="textbox" required  ng-pattern="/1[3|5|7|8|][0-9]{9}/" ng-model="number"  size="30"/></td>
+				</tr>
+				<tr>
+					<td class="name">密码：</td>
+					<td class="value"><input class="textbox" required   ng-model="password"  size="30"/></td>
+				</tr>
+				<tr>
+					<td class="name">密码确认：</td>
+					<td class="value"><input class="textbox" required   ng-model="passwordConfirm" compare-to="password"  size="30"/></td>
+				</tr>
+				<tr class="operate">
+					<td class="name"></td>
+					<td class="value"><input class="button-blue" type="submit" value="确认提交"/></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</div>

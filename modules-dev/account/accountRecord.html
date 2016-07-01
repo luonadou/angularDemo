@@ -1,0 +1,42 @@
+<div ng-controller="accountRecordCtrl" class="accountRecord">
+	<h2>资金记录</h2>
+	<div>
+		<table class="account-table" style=" margin:15px 0">
+			<thead class="thead-holder">
+				<tr>
+					<td>时间</td>
+					<td>类型</td>
+					<td>交易双方</td>
+					<td>操作金额（元）</td>
+					<td>备注</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in data">
+					<td ng-bind="item.recordTime"></td>
+					<td ng-bind="item.type"></td>
+					<td ng-bind="item.counterpart"></td>
+					<td ng-bind="item.amount"></td>
+					<td ng-bind="item.remarks"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div id="page">
+    	<div paging 
+    	class="small"
+		page="page" 
+		page-size="3" 
+		total="total"
+		adjacent="2"
+		dots="..."
+		scroll-top="false" 
+		hide-if-empty="true"
+		ul-class="pagination"
+		active-class="active"
+		disabled-class="disabled"
+		show-prev-next="true"
+		paging-action="pageSerch(2)">
+    	</div>
+    </div>
+</div>
